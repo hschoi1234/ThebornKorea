@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍콩반점 이용 안내</title>
+    <style>
+        body { margin: 0; padding: 0; display: flex; justify-content: center; background-color: #f4f4f4; }
+        
+        /* 전체 컨테이너: 이미지 크기에 맞춰 조절 */
+        .popup-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* 이미지 원본 가로 폭 */
+            background-image: url('skt0week_hk05.png'); /* 깃허브에 올린 이미지 파일명 */
+            background-size: contain;
+            background-repeat: no-repeat;
+            aspect-ratio: 800 / 1000; /* 이미지의 가로세로 비율 (원본에 맞춰 자동 계산) */
+        }
+
+        /* 공통 텍스트 스타일 */
+        .content-text {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            color: #333;
+            font-size: 18px; /* 글자 크기 (모바일 환경에 맞춰 조절 가능) */
+            line-height: 1.5;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-y: auto; /* 내용이 많을 경우 내부 스크롤 */
+        }
+
+        /* 1. 이용가능매장 (첫 번째 회색 상자) */
+        .box-1 {
+            top: 18.5%;
+            height: 8%;
+        }
+
+        /* 2. 사용불가매장 (두 번째 큰 회색 상자) */
+        .box-2 {
+            top: 34%;
+            height: 38%;
+        }
+
+        /* 3. 포장/배달 전문매장 (세 번째 회색 상자) */
+        .box-3 {
+            top: 80.5%;
+            height: 16%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="popup-container">
+    <div class="content-text box-1">
+        전국 홍콩반점 매장 (일부 매장 제외)
+    </div>
+
+    <div class="content-text box-2">
+        모다천안아산점, AK광명점, 부산사직점, 
+과천렛츠런파크점, 홍대입구역점, LGD파주점, 
+포항해병1사단점, 강서홈플러스점, 일산벨라시티점, 
+다산진건점, 안산본오점, 인천완정역점, 진주초전점, 
+전북남원점, 인천검암점, 메리그라운드향동점
+    </div>
+
+    <div class="content-text box-3">
+        인천만수점, 상일동역점, 응암점
+인천계산중앙점, 명일동점, 독립문점
+송도더테라스점, 송도SK뷰센트럴점, 신풍점, 부천도당점
+    </div>
+</div>
+
+</body>
+</html>
