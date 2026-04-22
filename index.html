@@ -19,25 +19,38 @@
 
         .content-text {
             position: absolute;
-            /* 왼쪽으로 옮기기 위해 left는 줄이고, right는 늘립니다 */
-            left: 5%;   /* 기존 10%에서 5%로 줄여서 더 왼쪽부터 시작하게 함 */
-            right: 25%; /* 오른쪽 여백을 더 주어 전체적으로 왼쪽으로 치우치게 함 */
+            /* 좌우 치우침을 해결하기 위해 여백을 동일하게(10%) 맞추고 중앙 정렬 */
+            left: 10%;
+            right: 10%;
             color: #333;
-            font-size: 20px; 
+            font-size: 16px; 
             line-height: 1.5;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            /* 텍스트 박스 안에서 줄바꿈이 잘 먹도록 설정 */
             white-space: pre-line; 
             word-break: keep-all;
         }
 
-        .box-1 { top: 18.5%; height: 8%; }
-        .box-2 { top: 34%; height: 38%; }
-        .box-3 { top: 80.5%; height: 16%; }
+        /* 1. 이용가능매장: 위치를 아래로 더 내림 (18.5% -> 20.5%) */
+        .box-1 { 
+            top: 20.5%; 
+            height: 6%; 
+        }
+
+        /* 2. 사용불가매장: 위치 및 높이 조절 */
+        .box-2 { 
+            top: 36%; 
+            height: 35%; 
+        }
+
+        /* 3. 포장/배달 전문매장: 위치 상단으로 살짝 올림 (80.5% -> 81%) */
+        .box-3 { 
+            top: 81%; 
+            height: 15%; 
+        }
     </style>
 </head>
 <body>
