@@ -19,36 +19,39 @@
 
         .content-text {
             position: absolute;
-            /* 좌우 치우침을 해결하기 위해 여백을 동일하게(10%) 맞추고 중앙 정렬 */
             left: 10%;
             right: 10%;
             color: #333;
-            font-size: 16px; 
-            line-height: 1.5;
+            /* 폰트 사이즈를 16px로 강제 고정 */
+            font-size: 16px !important; 
+            line-height: 1.6;
             font-weight: bold;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; /* 세로 중앙 정렬 */
+            justify-content: center; /* 가로 중앙 정렬 */
             text-align: center;
             white-space: pre-line; 
             word-break: keep-all;
         }
 
-        /* 1. 이용가능매장: 위치를 아래로 더 내림 (18.5% -> 20.5%) */
+        /* 1. 이용가능매장: 위치 살짝 아래로 */
         .box-1 { 
-            top: 20.5%; 
+            top: 19.5%; 
             height: 6%; 
         }
 
-        /* 2. 사용불가매장: 위치 및 높이 조절 */
+        /* 2. 사용불가매장: 중앙에 잘 위치하도록 조절 */
         .box-2 { 
-            top: 36%; 
-            height: 35%; 
+            top: 34%; 
+            height: 38%; 
+            align-items: flex-start; /* 내용이 많으므로 상단부터 정렬 원할 시 사용 (중앙이 좋으면 center로 유지) */
+            padding-top: 20px; /* 상단 여백 살짝 추가 */
+            box-sizing: border-box;
         }
 
-        /* 3. 포장/배달 전문매장: 위치 상단으로 살짝 올림 (80.5% -> 81%) */
+        /* 3. 포장/배달 전문매장: 위치 조정 */
         .box-3 { 
-            top: 81%; 
+            top: 80.5%; 
             height: 15%; 
         }
     </style>
@@ -56,7 +59,7 @@
 <body>
 
 <div class="popup-container">
-    <div class="content-text box-1">전국 홍콩반점 매장<br>(일부 매장 제외)</div>
+    <div class="content-text box-1">전국 홍콩반점 매장 (일부 매장 제외)</div>
 
     <div class="content-text box-2">
         모다천안아산점, AK광명점, 부산사직점,<br>
@@ -69,7 +72,8 @@
     <div class="content-text box-3">
         인천만수점, 상일동역점, 응암점,<br>
         인천계산중앙점, 명일동점, 독립문점,<br>
-        송도더테라스점, 송도SK뷰센트럴점, 신풍점, 부천도당점
+        송도더테라스점, 송도SK뷰센트럴점,<br>
+        신풍점, 부천도당점
     </div>
 </div>
 
