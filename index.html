@@ -5,53 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홍콩반점 이용 안내</title>
     <style>
-        body { margin: 0; padding: 0; display: flex; justify-content: center; background-color: #f4f4f4; }
+        /* 기본 레이아웃 초기화 */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; display: flex; justify-content: center; background-color: #f4f4f4; font-family: sans-serif; }
         
         .popup-container {
             position: relative;
-            width: 100vw;
-            max-width: 800px;
+            width: 100%;
+            max-width: 800px; /* PC 최대 너비 */
             background-image: url('./skt0week_05hk.png'); 
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            aspect-ratio: 800 / 1050; 
+            aspect-ratio: 800 / 1050; /* 이미지의 원본 비율 유지 */
         }
 
         .content-text {
             position: absolute;
-            left: 10%;
-            right: 10%;
+            left: 8%;  /* 좌우 여백을 조금 더 여유있게 조정 */
+            right: 8%;
             color: #333;
-            font-size: 18px; /* 기본 폰트 크기 */
-            line-height: 1.5;
-            font-weight: bold;
+            font-weight: 800; /* 강조를 위해 두께 상향 */
             display: flex;
             align-items: center; 
             justify-content: center; 
             text-align: center;
             white-space: pre-line; 
-            word-break: keep-all;
+            word-break: keep-all; /* 단어 단위 줄바꿈으로 가독성 향상 */
+            line-height: 1.3;
         }
 
-        /* 1. 이용가능매장: 텍스트를 더 키우고 위치 조정 */
+        /* 1. 이용가능매장: 가장 큰 제목 느낌 */
         .box-1 { 
-            top: 20%; /* 위치 미세 조정 */
-            height: 6.5%; 
-            font-size: 24px !important; /* 여기 수치를 키우면 글자가 더 커집니다 */
+            top: 19.5%; 
+            height: 7%; 
+            font-size: 3.5vw; /* 모바일 대응 유동 폰트 */
         }
 
-        /* 2. 사용불가매장 */
+        /* 2. 사용불가매장: 리스트가 많으므로 약간 작게 */
         .box-2 { 
-            top: 32%; 
-            height: 38%; 
-            font-size: 20px !important;
+            top: 31.5%; 
+            height: 39%; 
+            font-size: 2.8vw;
+            align-items: flex-start; /* 글자가 많을 경우 상단부터 정렬 */
+            padding-top: 2%;
         }
 
         /* 3. 포장/배달 전문매장 */
         .box-3 { 
-            top: 79%; 
-            height: 15%; 
-            font-size: 20px !important;
+            top: 78.5%; 
+            height: 16%; 
+            font-size: 2.8vw;
+        }
+
+        /* 💻 PC 환경 (800px 이상) 화면 대응 */
+        @media (min-width: 800px) {
+            .box-1 { font-size: 28px !important; }
+            .box-2 { font-size: 22px !important; }
+            .box-3 { font-size: 22px !important; }
+        }
+
+        /* 📱 아주 작은 모바일 (320px 이하) 대응 */
+        @media (max-width: 350px) {
+            .content-text { line-height: 1.2; }
         }
     </style>
 </head>
