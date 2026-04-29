@@ -41,14 +41,25 @@
             font-size: 3.5vw; /* 모바일 대응 유동 폰트 */
         }
 
-        /* 2. 사용불가매장: 리스트가 많으므로 약간 작게 */
-        .box-2 { 
-            top: 31.5%; 
-            height: 39%; 
-            font-size: 2.8vw;
-            align-items: flex-start; /* 글자가 많을 경우 상단부터 정렬 */
-            padding-top: 2%;
-        }
+        /* 2. 사용불가매장 영역 수정 */
+.box-2 { 
+    top: 33%;           /* 위쪽 여백을 위해 기존보다 약 1.5% 내림 */
+    height: 38%;        /* 박스의 전체 높이 유지 */
+    font-size: 2.8vw;   /* 모바일 가독성 폰트 크기 */
+    display: flex;
+    align-items: center;    /* 수직 중앙 정렬 (위쪽 붙음 방지) */
+    justify-content: center; /* 수평 중앙 정렬 */
+    padding-top: 0;         /* 위쪽 패딩 제거 (수직 중앙 정렬을 위해) */
+    line-height: 1.4;       /* 줄 간격 최적화 */
+}
+
+/* PC 버전에서도 위치가 어긋나지 않게 조정 */
+@media (min-width: 800px) {
+    .box-2 { 
+        top: 33% !important; 
+        font-size: 21px !important; 
+    }
+}
 
         /* 3. 포장/배달 전문매장 */
         .box-3 { 
